@@ -272,17 +272,6 @@ function Product(props) {
   } else {
     return (
       <div>
-        <table>
-          <thead>
-            <th>remaining stock</th>
-            <th>product name</th>
-          </thead>
-          <tbody>
-            <td>{product.countInStock}</td>
-            <td>{product.name}</td>
-          </tbody>
-        </table>
-
         <Card>
           <Link to={`/product/${product.slug}`}>
             <img
