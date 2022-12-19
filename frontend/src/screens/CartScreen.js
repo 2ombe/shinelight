@@ -68,33 +68,32 @@ export default function CartScreen() {
                       </Col>
                       <Col md={3}>
                         <Button
-                          variant="light"
-                          onClick={() =>
-                            updateCartHandler(item, item.quantity + 1)
-                          }
-                          disabled={item.quantity === 1}
-                        >
-                          <i className="fas fa-plus-circle btn_icon"></i>
-                        </Button>{" "}
-                        <span>{item.quantity}</span>{" "}
-                        <Button
                           onClick={() =>
                             updateCartHandler(item, item.quantity - 1)
                           }
                           variant="light"
                           disabled={item.quantity === 1}
                         >
-                          <i className="fas fa-minus-circle btn_icon"></i>
+                          <i className="fas fa-minus-circle"></i>
+                        </Button>{" "}
+                        <span>{item.quantity}</span>{" "}
+                        <Button
+                          variant="light"
+                          onClick={() =>
+                            updateCartHandler(item, item.quantity + 1)
+                          }
+                          disabled={item.quantity === item.countInStock}
+                        >
+                          <i className="fas fa-plus-circle"></i>
                         </Button>
                       </Col>
-                      <Col md={3}>{item.price} RWF</Col>
-                      <Col md={3}>{item.costPrice} RWF</Col>
+                      <Col md={3}>${item.price}</Col>
                       <Col md={2}>
                         <Button
                           onClick={() => removeItemHandler(item)}
                           variant="light"
                         >
-                          <i className="fas fa-trash btn_icon"></i>
+                          <i className="fas fa-trash"></i>
                         </Button>
                       </Col>
                     </Row>
